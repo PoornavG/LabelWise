@@ -87,7 +87,7 @@ def load_llama_model():
 def generate_health_report(nutrition_data, llama_pipeline, tokenizer):
     prompt = f"""
     You are a health expert who generates detailed health reports based on nutritional data.
-    Generate a health report based on the following nutritional data, summarize the contents and tell in detail the advantages or disadvantages of certain components present in the food: {json.dumps(nutrition_data)}.
+    Generate a health report based on the following nutritional data, summarize the contents and tell in detail the advantages or disadvantages of nutrients present in the food based on their amount present in the food: {json.dumps(nutrition_data)}.
     Provide suggestions or warnings in bullet points based on the data.
     """
 
@@ -98,7 +98,7 @@ def generate_health_report(nutrition_data, llama_pipeline, tokenizer):
         top_k=10,
         num_return_sequences=1,
         eos_token_id=tokenizer.eos_token_id,
-        max_length=256,
+        max_length=1024,
     )
     
     # Print the response (health report)
