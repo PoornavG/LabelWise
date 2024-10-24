@@ -87,8 +87,9 @@ You can use the provided Colab notebook for easy setup. Open Google Colab and cr
 ### Install Dependencies in Colab
 In a Colab notebook, run the following commands to install necessary dependencies:
 ```bash
+!pip install transformers torch accelerate
 !sudo apt install tesseract-ocr
-!pip install pytesseract transformers torch
+!pip install pytesseract
 ```
 ### Setup Hugging Face Authentication
 ###### Hugging Face API Key
