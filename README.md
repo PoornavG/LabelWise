@@ -90,6 +90,20 @@ In a Colab notebook, run the following commands to install necessary dependencie
 !sudo apt install tesseract-ocr
 !pip install pytesseract transformers torch
 ```
+### Setup Hugging Face Authentication
+###### Hugging Face API Key
+To access the LLaMA-2 model via Hugging Face, you need an API key.
+
+- Sign up or log in to your Hugging Face account at https://huggingface.co/.
+- Navigate to your API token page.
+- Create a new token (if you don't already have one) and copy the token.
+
+###### Authenticate Hugging Face Locally
+You need to log in to the Hugging Face API from your local environment. Run the following command in your terminal:
+```bash
+huggingface-cli login
+```
+Paste your API token when prompted.
 ### Upload Your Image
 Upload your nutrition label image to the Colab environment
 ```bash
