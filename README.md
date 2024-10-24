@@ -3,12 +3,12 @@
 This project is designed to extract nutritional information from an image of a nutrition label using Optical Character Recognition (OCR) via Tesseract, and then generate a detailed health report based on the extracted data using LLaMA-2, a language model from Meta.
 ## Features
 
-Extract Nutritional Data: Uses Tesseract OCR to extract nutritional information from an image of a nutrition label.
-Generate Health Report: Uses the LLaMA-2 language model to generate a detailed health report based on the extracted nutritional data, including advantages, disadvantages, and health warnings.
-Custom Image Input: Users can input the path of the image file directly in the script for convenience.
-Outputs:
-JSON-formatted nutritional data.
-A health report providing analysis and suggestions.
+-Extract Nutritional Data: Uses Tesseract OCR to extract nutritional information from an image of a nutrition label.
+-Generate Health Report: Uses the LLaMA-2 language model to generate a detailed health report based on the extracted nutritional data, including advantages, disadvantages, and health warnings.
+-Custom Image Input: Users can input the path of the image file directly in the script for convenience.
+-Outputs:
+-JSON-formatted nutritional data.
+-A health report providing analysis and suggestions.
 
 ## Prerequisites
 
