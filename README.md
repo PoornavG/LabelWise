@@ -11,59 +11,56 @@ This project is designed to extract nutritional information from an image of a n
 - JSON-formatted nutritional data.
 - A health report providing analysis and suggestions.
 
-## Requirement
+## Requirements
 
 - Python 3.x
 - Tesseract OCR
 - Hugging Face's Transformers Library
 - PyTorch
 
-Make sure you have `bcrypt` installed. You can install it using `pip`:
+## Installation Guide(Local setup)
+### Install Tesseract OCR
+Linux
+```bash
+sudo apt update
+sudo apt install tesseract-ocr
+```
+macOS:
+```bash
+brew install tesseract
+```
+Windows:
+
+- Download the installer from Tesseract's official website.
+- Add Tesseract to the system path.
+
+### Install Python Dependencies
 
 ```bash
-pip install bcrypt
+pip install pytesseract transformers torch
 ```
-## Installation
-
-Clone the repository or download the encrypt.py and verify.py files to your local machine.
+### Clone or Download the Project
 ```bash
-git clone https://github.com/PoornavG/TwistyCrypt.git
-cd TwistyCrypt
+git clone https://github.com/PoornavG/LabelWise
 ```
-
 ## Usage
 
-### Encrypt a Password and Generate Hash
-
-The `encrypt.py` script encrypts a password and generates a bcrypt hash using a bit-flipping algorithm.
-
-1. Run the `encrypt.py` script:
-
-   ```bash
-   python encrypt.py
-   ```
-2.Enter the password when prompted:
-
-  ```bash
-      Enter the password: Hello123
-  ```
-
-## Verify a Password Against a Hash
-
-The verify.py script verifies if the entered password matches the stored hash.
-
-1.Run the verify.py script:
-
+#### Navigate to the project folder:
 ```bash
-python verify.py
+cd LabelWise
 ```
 
-2.Enter the password and the hashed password for verification:
+#### Provide Your Image
+Place your image file (with a nutrition label) inside the project directory or specify its full path when running the script.
+
+#### Run the Program
 
 ```bash
-Enter the password for verification: Hello123
-Enter the hashed password: b'$2b$12$grm.2E9oSppejVt6t92WduYu34kb6p8Rn2meTUzRbCMnouLcCAgOS'
+python main.py --input /path/to/your/nutrition_image.jpg
 ```
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Example usage
+```bash
+python main.py --input /path/to/your/nutrition_image.jpg --output ./output
+```
 
