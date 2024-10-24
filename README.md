@@ -17,6 +17,7 @@ This project is designed to extract nutritional information from an image of a n
 - Tesseract OCR
 - Hugging Face's Transformers Library
 - PyTorch
+- Hugging Face API Access (for accessing the LLaMA-2 model)
 
 ## Installation Guide(Local setup)
 ### Install Tesseract OCR
@@ -49,7 +50,20 @@ git clone https://github.com/PoornavG/LabelWise
 ```bash
 cd LabelWise
 ```
+#### Setup Hugging Face Authentication
+###### Hugging Face API Key
+To access the LLaMA-2 model via Hugging Face, you need an API key.
 
+- Sign up or log in to your Hugging Face account at https://huggingface.co/.
+- Navigate to your API token page.
+- Create a new token (if you don't already have one) and copy the token.
+
+###### Authenticate Hugging Face Locally
+You need to log in to the Hugging Face API from your local environment. Run the following command in your terminal:
+```bash
+huggingface-cli login
+```
+Paste your API token when prompted.
 #### Provide Your Image
 Place your image file (with a nutrition label) inside the project directory or specify its full path when running the script.
 
@@ -63,4 +77,29 @@ python main.py --input /path/to/your/nutrition_image.jpg
 ```bash
 python main.py --input /path/to/your/nutrition_image.jpg --output ./output
 ```
+## Google Colab Setup
 
+If you prefer to use Google Colab, here’s how you can do it:
+
+### Open Google Colab
+You can use the provided Colab notebook for easy setup. Open Google Colab and create a new notebook.
+
+### Install Dependencies in Colab
+In a Colab notebook, run the following commands to install necessary dependencies:
+```bash
+!sudo apt install tesseract-ocr
+!pip install pytesseract transformers torch
+```
+### Upload Your Image
+Upload your nutrition label image to the Colab environment
+```bash
+from google.colab import files
+uploaded = files.upload()
+image_file_path = list(uploaded.keys())[0]  # Select the first uploaded file
+```
+### Run the Code
+Copy and paste the project code into the Colab notebook. Set the image_file_path to the uploaded file:
+```bash
+image_file_path = "/content/your_uploaded_image.jpg"  # Adjust this to your file name
+```
+- Then, run the script to extract nutritional data and generate the health report.
